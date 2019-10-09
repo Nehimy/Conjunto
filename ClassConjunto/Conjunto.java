@@ -1,4 +1,4 @@
-package Logic;
+package ClassConjunto;
 import java.util.Scanner;
 import java.util.*;
 
