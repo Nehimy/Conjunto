@@ -7,7 +7,7 @@ public class Conjunto{
   int dim;
   
   //constructor
-  public Conjuntito(){
+  public Conjunto(){
     Conjuntito = new int [10];
     dim = -1;
   }
@@ -23,7 +23,7 @@ public class Conjunto{
     while(i<=dim && Conjuntito[i] != elemento){
       i++;
     }
-    return i <= dim;
+    return (i <= dim);
   }
   
   public int PositionElemento(int elemento){
@@ -42,6 +42,14 @@ public class Conjunto{
     dim--;
   }
   
+  public String ObtenerTodo(){
+    String cadena = "";
+    for (int i = 0;i<=dim;i++){
+      cadena = cadena + Conjuntito[i] + " ";
+    }
+    return cadena;
+  }
+  
   public void Redimensionar(){
     if(dim+1 == Conjuntito.length){
       int aux[] = new int [Conjuntito.length+1];
@@ -55,12 +63,14 @@ public class Conjunto{
   /*-----------------Metodos-------------------*/
   
   public void Insertar(int elemento){
+  //System.out.println("Funciona");
     if(ConjuntoVacio()){
       dim++;
       Conjuntito [dim] = elemento;
+      System.out.println("Funciona 2.2");
     }else{
       if(!Pertenece(elemento)){//Si el elemento no pertenece lo añadimos
-        Redimensionar();      //pertenece=false entonces negamos para convertirlo en true y añadimos en el set
+        Redimensionar();      
         dim++;
         Conjuntito [dim] = elemento;
       }
@@ -77,40 +87,33 @@ public class Conjunto{
     }
   }
   
-  public void Union(Conjuntito A,Conjuntito B){
+  public void Union(Conjunto A,Conjunto B){
     for(int i=0;i<=A.dim;i++){
-      Insertar(A[i]);
+      Insertar(A.Conjuntito[i]);
     }
     for(int i=0;i<=B.dim;i++){
-      Insertar(B[i]);
+      Insertar(B.Conjuntito[i]);
     }
   }
   
-  public void Intercession(Conjuntito A,Conjuntito B){
+  public void Intercession(Conjunto A,Conjunto B){
     for(int i=0;i<=A.dim;i++){
-      if(B.Pertenece(A[i])){
-        Insertar(A[i]);
+      if(B.Pertenece(A.Conjuntito[i])){
+        Insertar(A.Conjuntito[i]);
       } 
     }
   }
   
-  public boolean SubConjunto(Conjuntito A,Conjuntito B){
+  public boolean SubConjunto(Conjunto A,Conjunto B){
     int i=0; boolean boleano = true;
     while(i <= A.dim && boleano){
-      if(!B.Pertenece(A[i])){
-        booleano = false;
+      if(!B.Pertenece(A.Conjuntito[i])){//cuando no pertenesca retorna falso
+        boleano = false;               //y lo combertimos en true para que retorne falso
       } 
       i++;
     }
+    return boleano;
   }
-  
- } 
-  
-  
-  
-  
-  
-  
-  
+   
   /*-------------------------------------------*/
 }

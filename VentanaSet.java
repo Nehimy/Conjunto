@@ -11,12 +11,44 @@ import javax.swing.JOptionPane;
 
 public class VentanaSet{
 
+  /*-----------*/
+  /* Atributos */
+  /*-----------*/
+  /*oooooooooooooooooooooooooooooooooo*/
+  
+  private Conjunto A = new Conjunto();
+  private Conjunto B = new Conjunto();
+  private Conjunto C = new Conjunto();
+  private Conjunto D = new Conjunto();
+  
+  /* Ventana */
+  private JFrame Ventana;
+  
+  /*Button*/
+  private JButton Insertar_en_A;
+  private JButton Insertar_en_B;
+  private JButton Insertar_en_C;
+  private JButton Union;
+  private JButton Intercession;
+  private JButton SubConjunto;
+  
+  /*Caja de texto*/
+  private JTextField  Insertar_en_A_Txt;
+  private JTextField  Insertar_en_B_Txt;
+  private JTextField  Insertar_en_C_Txt;
+  private JTextField  Mostrar_A_Txt;
+  private JTextField  Mostrar_B_Txt;
+  private JTextField  Mostrar_C_Txt;
+  private JTextField  Resultado_Txt;
+  
+  /*oooooooooooooooooooooooooooooooooo*/
+  
   public static void main(String[] args){  
     new VentanaSet();
   }
   
   //Constructor De la Ventana
-  public VentanaBitwise(){
+  public VentanaSet(){
   
     //Variablede tipo JFrame    
     Ventana = new JFrame("Ventanita");
@@ -30,11 +62,246 @@ public class VentanaSet{
     gridConf.fill = GridBagConstraints.HORIZONTAL;
     /*---------------------------------------------*/
     
+    /*+++++++++++++++++++++++++++++++++++*/
+    /*Declarando todas las Cajas de texto*/
+    /*+++++++++++++++++++++++++++++++++++*/
+    
+    //Creamos nuetro propio color celeste	
+    Color lightBlue = new Color(51, 153, 255); 	
+    
+    //Declaramos la caja Insertar_en_A_Txt
+    Insertar_en_A_Txt = new JTextField("");
+    Border Borde_Insertar_en_A_Txt = BorderFactory.createLineBorder(lightBlue, 2);
+    Insertar_en_A_Txt.setBorder(Borde_Insertar_en_A_Txt );
+    
+    //Declaramos la caja Insertar_en_B_Txt
+    Insertar_en_B_Txt = new JTextField("");
+    Border Borde_Insertar_en_B_Txt = BorderFactory.createLineBorder(lightBlue, 2);
+    Insertar_en_B_Txt.setBorder(Borde_Insertar_en_B_Txt );
+    
+    //Declaramos la caja Insertar_en_C_Txt
+    Insertar_en_C_Txt = new JTextField("");
+    Border Borde_Insertar_en_C_Txt = BorderFactory.createLineBorder(lightBlue, 2);
+    Insertar_en_C_Txt.setBorder(Borde_Insertar_en_C_Txt );
+    
+    //Declaramos la caja Mostrar_A_Txt
+    Mostrar_A_Txt = new JTextField("");
+    Border Borde_Mostrar_A_Txt = BorderFactory.createLineBorder(lightBlue, 2);
+    Mostrar_A_Txt.setBorder(Borde_Mostrar_A_Txt);
+    
+    //Declaramos la caja Mostrar_B_Txt
+    Mostrar_B_Txt = new JTextField("");
+    Border Borde_Mostrar_B_Txt = BorderFactory.createLineBorder(lightBlue, 2);
+    Mostrar_B_Txt.setBorder(Borde_Mostrar_B_Txt);
+    
+    //Declaramos la caja Mostrar_C_Txt
+    Mostrar_C_Txt = new JTextField("");
+    Border Borde_Mostrar_C_Txt = BorderFactory.createLineBorder(lightBlue, 2);
+    Mostrar_C_Txt.setBorder(Borde_Mostrar_C_Txt);
+    
+    //Declaramos la caja Resultado_Txt
+    Resultado_Txt = new JTextField("");
+    Border Borde_Resultado_Txt = BorderFactory.createLineBorder(lightBlue, 2);
+    Resultado_Txt.setBorder(Borde_Resultado_Txt);
+    
+    /*+++++++++++++++++++++++++++++++++++*/
+    /*+++Declaramos todos los Botones+++*/
+    /*+++++++++++++++++++++++++++++++++*/
+    
+    //Declaramos botón Insertar_en_A
+    Insertar_en_A = new JButton("Insertar en A");
+    Insertar_en_A.setForeground(Color.white);
+    Border Border_Insertar_en_A = BorderFactory.createLineBorder(Color.darkGray, 2);
+    Insertar_en_A.setBorder(Border_Insertar_en_A);
+    Insertar_en_A.setBackground(lightBlue);
+    
+    //Declaramos botón Insertar_en_B
+    Insertar_en_B = new JButton("Insertar en B");
+    Insertar_en_B.setForeground(Color.white);
+    Border Border_Insertar_en_B = BorderFactory.createLineBorder(Color.darkGray, 2);
+    Insertar_en_B.setBorder(Border_Insertar_en_B);
+    Insertar_en_B.setBackground(lightBlue);
+    
+    //Declaramos botón Insertar_en_C
+    Insertar_en_C = new JButton("Insertar en C");
+    Insertar_en_C.setForeground(Color.white);
+    Border Border_Insertar_en_C = BorderFactory.createLineBorder(Color.darkGray, 2);
+    Insertar_en_C.setBorder(Border_Insertar_en_C);
+    Insertar_en_C.setBackground(lightBlue);
+    
+    //Declaramos botón Union
+    Union = new JButton("Union");
+    Union.setForeground(Color.white);
+    Border Border_Union = BorderFactory.createLineBorder(Color.darkGray, 2);
+    Union.setBorder(Border_Union);
+    Union.setBackground(lightBlue);
+    
+    //Declaramos botón Intercession
+    Intercession = new JButton("Intercession");
+    Intercession.setForeground(Color.white);
+    Border Border_Intercession = BorderFactory.createLineBorder(Color.darkGray, 2);
+    Intercession.setBorder(Border_Intercession);
+    Intercession.setBackground(lightBlue);
+    
+    //Declaramos botón SubConjunto
+    SubConjunto = new JButton("SubConjunto");
+    SubConjunto.setForeground(Color.white);
+    Border Border_SubConjunto = BorderFactory.createLineBorder(Color.darkGray, 2);
+    SubConjunto.setBorder(Border_SubConjunto);
+    SubConjunto.setBackground(lightBlue);
+    
+    /*-------------------------------*/
+    /* Adherir elementos a la ventana*/
+    /*-------------------------------*/
+    
+    /*+++++++++++++*/
+    /*Caja de Texto*/
+    /*+++++++++++++*/
+    
+    /*Confi de la pocicion de Insertar_en_A_Txt*/
+    gridConf.gridx = 1;
+    gridConf.gridy = 0;
+    gridConf.ipady = 20;
+    gridConf.ipadx = 50;
+    gridConf.gridwidth = 1;
+    gridConf.insets = new Insets(0,0,3,3); //padding 
+    //Añadir Insertar_en_A_Txt a la ventana
+    Ventana.add(Insertar_en_A_Txt, gridConf);
+    
+    /*Confi de la pocicion de Insertar_en_B_Txt*/
+    gridConf.gridy = 1;
+    //Añadir Insertar_en_B_Txt a la ventana
+    Ventana.add(Insertar_en_B_Txt, gridConf);
+    
+    /*Confi de la pocicion de Insertar_en_C_Txt*/
+    gridConf.gridy = 2;
+    //Añadir Insertar_en_C_Txt a la ventana
+    Ventana.add(Insertar_en_C_Txt, gridConf);
+    
+    /*Confi de la pocicion de Mostrar_A_Txt*/
+    gridConf.gridx = 0;
+    gridConf.gridy = 4;
+    gridConf.ipadx = 100;
+    gridConf.gridwidth = 2;
+    //Añadir Mostrar_A_Txt a la ventana
+    Ventana.add(Mostrar_A_Txt, gridConf);
+    
+    /*Confi de la pocicion de Mostrar_B_Txt*/
+    gridConf.gridx = 0;
+    gridConf.gridy = 5;
+    gridConf.ipadx = 100;
+    gridConf.gridwidth = 2;
+    //Añadir Mostrar_B_Txt a la ventana
+    Ventana.add(Mostrar_B_Txt, gridConf);
+    
+    /*Confi de la pocicion de Mostrar_C_Txt*/
+    gridConf.gridx = 0;
+    gridConf.gridy = 6;
+    gridConf.ipadx = 100;
+    gridConf.gridwidth = 2;
+    //Añadir Mostrar_C_Txt a la ventana
+    Ventana.add(Mostrar_C_Txt, gridConf);
+    
+    /* Confi de la pocicion de Resultado_Txt */
+    gridConf.gridx = 0;
+    gridConf.gridy = 7;
+    gridConf.ipadx = 100;
+    gridConf.gridwidth = 2;
+    //Añadir Resultado_Txt a la ventana
+    Ventana.add(Resultado_Txt, gridConf);
+    
+    /*+++++++*/
+    /*Botones*/
+    /*+++++++*/
+    
+    //Confi de Insertar_en_A 
+    gridConf.ipady = 20;
+    gridConf.ipadx = 20;
+    gridConf.gridwidth = 1;
+    gridConf.insets = new Insets(10,10,10,10);
+    
+    //Ayadir Insertar_en_A  en la ventana
+    gridConf.gridx = 0;
+    gridConf.gridy = 0;
+    Ventana.add(Insertar_en_A , gridConf);
+    
+    //Confi de Insertar_en_B
+    //Ayadir Insertar_en_B en la ventana
+    gridConf.gridx = 0;
+    gridConf.gridy = 1;
+    Ventana.add(Insertar_en_B, gridConf);
+    
+    //Confi de Insertar_en_C
+    //Ayadir Insertar_en_C en la ventana
+    gridConf.gridx = 0;
+    gridConf.gridy = 2;
+    Ventana.add(Insertar_en_C, gridConf);
+    
+    //Confi de Union
+    //Ayadir Union en la ventana
+    gridConf.gridx = 0;
+    gridConf.gridy = 3;
+    Ventana.add(Union, gridConf);
+    
+    //Confi de Intercession
+    //Ayadir Intercession en la ventana
+    gridConf.gridx = 1;
+    gridConf.gridy = 3;
+    Ventana.add(Intercession, gridConf);
+    
+    //Confi de SubConjunto
+    //Ayadir SubConjunto en la ventana
+    gridConf.gridx = 2;
+    gridConf.gridy = 3;
+    Ventana.add(SubConjunto, gridConf);
+    
+    /*****************************************/
+    /*******Onclick De los Botoncitos*********/
+    /*****************************************/
+    
+    //onclick Insertar_en_A
+    Insertar_en_A.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent e){
+        Insertar_en_A_Click();
+      }
+    });
+    
+    //onclick Insertar_en_B
+    Insertar_en_B.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent e){
+        Insertar_en_B_Click();
+      }
+    });
+    
+    //onclick Insertar_en_B
+   /* Insertar_en_A.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent e){
+        Insertar_en_B_Click();
+      }
+    });
+    */
     /*------------------------*/
     //ventanaM.pack();
     Ventana.setVisible(true);//Configurando visualización de la ventana
     /*------------------------*/
   
   }
+
+  public void Insertar_en_A_Click(){
+
+    int Elemento = Integer.parseInt(Insertar_en_A_Txt.getText());
+    A.Insertar(Elemento);
+    Mostrar_A_Txt.setText(A.ObtenerTodo());
+
+  }
+  
+  public void Insertar_en_B_Click(){
+    
+    int Elemento = Integer.parseInt(Insertar_en_B_Txt.getText());
+    B.Insertar(Elemento);
+    Mostrar_B_Txt.setText(B.ObtenerTodo());
+  }
+  
+  
 }
 
