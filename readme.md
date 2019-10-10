@@ -1,9 +1,6 @@
 # Proyecto Bitwise para Estructura de Datos I
 
-Este proyecto trata de Conjuntos:
-Union
-Intercesión
-Subconjunto
+Este proyecto trata de Conjuntos: union, intercesión,subconjunto.
 
 Podemos poner a pruba como funcionan cada uno de ellos.
 
@@ -16,11 +13,11 @@ Solo es una prueba de concepto para aplicar lo avanzado hasta ahora que es : Tip
 
 # Imagenes ilustrativas de la interfaz
 
-![alt text](https://ibb.co/R0YQQZf)
-![alt text](https://ibb.co/KGZ4Qgq)
-![alt text](https://ibb.co/Bc3Tzmb)
-![alt text](https://ibb.co/sqnvxpt)
-![alt text](https://ibb.co/QNwh9Jq)
+![Captura de pantalla de 2019-10-10 16-40-28](https://user-images.githubusercontent.com/48808732/66607764-f4fce100-eb82-11e9-824f-48edd67d1ec9.png)
+![Captura de pantalla de 2019-10-10 16-41-56](https://user-images.githubusercontent.com/48808732/66607766-f4fce100-eb82-11e9-8ca4-f2f76ce3710a.png)
+![Captura de pantalla de 2019-10-10 16-42-22](https://user-images.githubusercontent.com/48808732/66607767-f4fce100-eb82-11e9-9f0f-8c5770ddeb3e.png)
+![Captura de pantalla de 2019-10-10 16-43-12](https://user-images.githubusercontent.com/48808732/66607768-f5957780-eb82-11e9-8300-821d8f7d25dc.png)
+
 
 # Como usar
 
