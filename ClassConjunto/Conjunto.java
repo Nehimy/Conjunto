@@ -45,9 +45,19 @@ public class Conjunto{
   public String ObtenerTodo(){
     String cadena = "";
     for (int i = 0;i<=dim;i++){
-      cadena = cadena + Conjuntito[i] + " ";
+      if(i == dim){
+        cadena = cadena +Conjuntito[i] + " ";
+      }else{
+        cadena = cadena +Conjuntito[i] + "," + " ";
+      }
+      
     }
     return cadena;
+  }
+  
+  public void Clear(){
+    dim = -1;
+    Conjuntito = new int [5];
   }
   
   public void Redimensionar(){

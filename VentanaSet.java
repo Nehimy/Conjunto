@@ -4,6 +4,7 @@
   -http://lineadecodigo.com/java/string-con-salto-de-linea-en-java/
   -https://es.thefreedictionary.com/denota
   -https://beginnersbook.com/2015/05/java-boolean-to-string/
+  -https://www.w3schools.com/colors/colors_picker.asp
 */
 
 import ClassConjunto.Conjunto;
@@ -51,6 +52,7 @@ public class VentanaSet{
   private JButton Union;
   private JButton Intercession;
   private JButton SubConjunto;
+  private JButton Clear;
   
   /*Caja de texto*/
   private JTextField  Insertar_en_A_Txt;
@@ -60,6 +62,11 @@ public class VentanaSet{
   private JTextField  Mostrar_B_Txt;
   private JTextField  Mostrar_C_Txt;
   private JTextField  Resultado_Txt;
+  
+  /*Label*/
+  private JLabel label_A;
+  private JLabel label_B;
+  private JLabel label_C;
   
   /*oooooooooooooooooooooooooooooooooo*/
   
@@ -71,7 +78,7 @@ public class VentanaSet{
   public VentanaSet(){
   
     //Variablede tipo JFrame    
-    Ventana = new JFrame("Ventanita");
+    Ventana = new JFrame("Conjunto");
     Ventana.setSize(550,550);
     Ventana.getContentPane().setBackground(Color.white);
     Ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);/*Finaliza el programa*/
@@ -88,6 +95,11 @@ public class VentanaSet{
     
     //Creamos nuetro propio color celeste	
     Color lightBlue = new Color(51, 153, 255); 	
+    
+    //Creamos nuetro propio color azul oscuro
+    //Color BlueDark = new Color(0, 68, 102); azul mas oscuro
+    Color BlueDark = new Color(0, 119, 179);
+    
     
     //Declaramos la caja Insertar_en_A_Txt
     Insertar_en_A_Txt = new JTextField("");
@@ -131,44 +143,71 @@ public class VentanaSet{
     //Declaramos botón Insertar_en_A
     Insertar_en_A = new JButton("Insertar en A");
     Insertar_en_A.setForeground(Color.white);
-    Border Border_Insertar_en_A = BorderFactory.createLineBorder(Color.darkGray, 2);
+    Border Border_Insertar_en_A = BorderFactory.createLineBorder(BlueDark, 2);
     Insertar_en_A.setBorder(Border_Insertar_en_A);
     Insertar_en_A.setBackground(lightBlue);
     
     //Declaramos botón Insertar_en_B
     Insertar_en_B = new JButton("Insertar en B");
     Insertar_en_B.setForeground(Color.white);
-    Border Border_Insertar_en_B = BorderFactory.createLineBorder(Color.darkGray, 2);
+    Border Border_Insertar_en_B = BorderFactory.createLineBorder(BlueDark, 2);
     Insertar_en_B.setBorder(Border_Insertar_en_B);
     Insertar_en_B.setBackground(lightBlue);
     
     //Declaramos botón Insertar_en_C
     Insertar_en_C = new JButton("Insertar en C");
     Insertar_en_C.setForeground(Color.white);
-    Border Border_Insertar_en_C = BorderFactory.createLineBorder(Color.darkGray, 2);
+    Border Border_Insertar_en_C = BorderFactory.createLineBorder(BlueDark, 2);
     Insertar_en_C.setBorder(Border_Insertar_en_C);
     Insertar_en_C.setBackground(lightBlue);
     
     //Declaramos botón Union
     Union = new JButton("Union");
     Union.setForeground(Color.white);
-    Border Border_Union = BorderFactory.createLineBorder(Color.darkGray, 2);
+    Border Border_Union = BorderFactory.createLineBorder(BlueDark, 2);
     Union.setBorder(Border_Union);
     Union.setBackground(lightBlue);
     
     //Declaramos botón Intercession
     Intercession = new JButton("Intercession");
     Intercession.setForeground(Color.white);
-    Border Border_Intercession = BorderFactory.createLineBorder(Color.darkGray, 2);
+    Border Border_Intercession = BorderFactory.createLineBorder(BlueDark, 2);
     Intercession.setBorder(Border_Intercession);
     Intercession.setBackground(lightBlue);
     
     //Declaramos botón SubConjunto
     SubConjunto = new JButton("SubConjunto");
     SubConjunto.setForeground(Color.white);
-    Border Border_SubConjunto = BorderFactory.createLineBorder(Color.darkGray, 2);
+    Border Border_SubConjunto = BorderFactory.createLineBorder(BlueDark, 2);
     SubConjunto.setBorder(Border_SubConjunto);
     SubConjunto.setBackground(lightBlue);
+    
+    //Declaramos botón Clear
+    Clear = new JButton("Clear all");
+    Clear.setForeground(Color.white);
+    Border Border_Clear = BorderFactory.createLineBorder(BlueDark, 2);
+    Clear.setBorder(Border_Clear);
+    Clear.setBackground(lightBlue);
+    
+    /*+++++++++++++++++++++++++++++++++++*/
+    /*+++Declaramos todos los Labels +++*/
+    /*+++++++++++++++++++++++++++++++++*/
+    
+    //Crea JLabels
+    label_A = new JLabel("                A");//para que A quede a un lado usamos el botton del teclado tab 
+    label_A.setFont(new Font("    Arial", 1,14));
+    /*Border borde_label_A = BorderFactory.createLineBorder(Color.pink, 2);
+    label_A.setBorder(borde_label_A);*/
+    
+    label_B = new JLabel("                B");
+    label_B.setFont(new Font("Arial", 1,14));
+    /*Border borde_label_B = BorderFactory.createLineBorder(Color.pink, 2);
+    label_B.setBorder(borde_label_B);*/
+    
+    label_C = new JLabel("                C");
+    label_C.setFont(new Font("Arial", 1,14));
+    /*Border borde_label_C = BorderFactory.createLineBorder(Color.pink, 2);
+    label_C.setBorder(borde_label_C);*/
     
     /*-------------------------------*/
     /* Adherir elementos a la ventana*/
@@ -199,7 +238,7 @@ public class VentanaSet{
     Ventana.add(Insertar_en_C_Txt, gridConf);
     
     /*Confi de la pocicion de Mostrar_A_Txt*/
-    gridConf.gridx = 0;
+    gridConf.gridx = 1;
     gridConf.gridy = 4;
     gridConf.ipadx = 100;
     gridConf.gridwidth = 2;
@@ -207,7 +246,7 @@ public class VentanaSet{
     Ventana.add(Mostrar_A_Txt, gridConf);
     
     /*Confi de la pocicion de Mostrar_B_Txt*/
-    gridConf.gridx = 0;
+    gridConf.gridx = 1;
     gridConf.gridy = 5;
     gridConf.ipadx = 100;
     gridConf.gridwidth = 2;
@@ -215,7 +254,7 @@ public class VentanaSet{
     Ventana.add(Mostrar_B_Txt, gridConf);
     
     /*Confi de la pocicion de Mostrar_C_Txt*/
-    gridConf.gridx = 0;
+    gridConf.gridx = 1;
     gridConf.gridy = 6;
     gridConf.ipadx = 100;
     gridConf.gridwidth = 2;
@@ -223,7 +262,7 @@ public class VentanaSet{
     Ventana.add(Mostrar_C_Txt, gridConf);
     
     /* Confi de la pocicion de Resultado_Txt */
-    gridConf.gridx = 0;
+    gridConf.gridx = 1;
     gridConf.gridy = 7;
     gridConf.ipadx = 100;
     gridConf.gridwidth = 2;
@@ -275,6 +314,31 @@ public class VentanaSet{
     gridConf.gridy = 3;
     Ventana.add(SubConjunto, gridConf);
     
+    //Confi de Clear
+    //Ayadir Clear en la ventana
+    gridConf.gridx = 3;
+    gridConf.gridy = 3;
+    Ventana.add(Clear, gridConf);
+    
+    /*++++++++*/
+    /* Labels */
+    /*++++++++*/
+    
+    gridConf.gridx = 0;
+    gridConf.gridy = 4;
+    //Añadir labelPocition en la ventana
+    Ventana.add(label_A,gridConf);
+    
+    gridConf.gridx = 0;
+    gridConf.gridy = 5;
+    //Añadir labelPocition en la ventana
+    Ventana.add(label_B,gridConf);
+    
+    gridConf.gridx = 0;
+    gridConf.gridy = 6;
+    //Añadir labelPocition en la ventana
+    Ventana.add(label_C,gridConf);
+    
     /*****************************************/
     /*******Onclick De los Botoncitos*********/
     /*****************************************/
@@ -321,6 +385,13 @@ public class VentanaSet{
       }
     });
     
+    //onclick Clear
+    Clear.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent e){
+        Clear_Click();
+      }
+    });
+    
     /*------------------------*/
     //ventanaM.pack();
     Ventana.setVisible(true);//Configurando visualización de la ventana
@@ -356,7 +427,7 @@ public class VentanaSet{
     
     //Declaring a variable 
     int number;
-    number = Integer.parseInt(JOptionPane.showInputDialog(Ventana," A U B press 1;\n A U C press 2;\n B U C press 3: "));
+    number = Integer.parseInt(JOptionPane.showInputDialog(Ventana," A U B insert 1;\n A U C insert 2;\n B U C insert 3: "));
     //Switch expression
     switch (number){
       //Case statements
@@ -382,7 +453,7 @@ public class VentanaSet{
   
     //Declaring a variable 
     int number;
-    number = Integer.parseInt(JOptionPane.showInputDialog(Ventana," A ∩ B press 1;\n A ∩ C press 2;\n B ∩ C press 3: "));
+    number = Integer.parseInt(JOptionPane.showInputDialog(Ventana," A ∩ B insert 1;\n A ∩ C insert 2;\n B ∩ C insert 3: "));
     //Switch expression
     switch (number){
       //Case statements
@@ -408,27 +479,57 @@ public class VentanaSet{
   
     //Declaring a variable 
     int number;
-    number = Integer.parseInt(JOptionPane.showInputDialog(Ventana," B ⊂ A press 1;\n C ⊂ A press 2;\n B ⊂ C press 3: "));
+    number = Integer.parseInt(JOptionPane.showInputDialog(Ventana," A ⊂ B insert 1\n A ⊂ C insert 2\n B ⊂ A insert 3\n B ⊂ C insert 4\n C ⊂ A insert 5\n C ⊂ B insert 6: "));
     //Switch expression
     switch (number){
       //Case statements
       case 1:
-        //J.SubConjunto(A,B);
-        Resultado_Txt.setText(Boolean.toString(J.SubConjunto(B,A)));
+        Resultado_Txt.setText(Boolean.toString(J.SubConjunto(A,B)));
         break;
       case 2:
-        //K.SubConjunto(A,C);
-        Resultado_Txt.setText(Boolean.toString(K.SubConjunto(C,A)));
-        
+        Resultado_Txt.setText(Boolean.toString(K.SubConjunto(A,C)));      
         break;
       case 3:
-        //L.SubConjunto(B,C);
+        Resultado_Txt.setText(Boolean.toString(L.SubConjunto(B,A)));
+      case 4:
         Resultado_Txt.setText(Boolean.toString(L.SubConjunto(B,C)));
+        break;
+      case 5:
+        Resultado_Txt.setText(Boolean.toString(L.SubConjunto(C,A)));
+        break;
+      case 6:
+        Resultado_Txt.setText(Boolean.toString(L.SubConjunto(C,B)));
         break;
         //Default case statement
       default:
         System.out.println("Not in 1, 2 or 3");
     }
+  }
+  
+  public void Clear_Click(){
+  
+    A.Clear();
+    B.Clear();
+    C.Clear();
+    D.Clear();
+    E.Clear();
+    F.Clear();
+    G.Clear();
+    H.Clear();
+    I.Clear();
+    J.Clear();
+    K.Clear();
+    L.Clear();
+    
+    Insertar_en_A_Txt.setText("");
+    Insertar_en_B_Txt.setText("");
+    Insertar_en_C_Txt.setText("");
+    
+    Mostrar_A_Txt.setText("");
+    Mostrar_B_Txt.setText("");
+    Mostrar_C_Txt.setText("");
+    Resultado_Txt.setText("");
+    
   }
   
 }
