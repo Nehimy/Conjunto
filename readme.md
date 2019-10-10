@@ -1,9 +1,9 @@
 # Proyecto Bitwise para Estructura de Datos I
 
 Este proyecto trata de Conjuntos:
--Union
--Intercesión
--Subconjunto
+Union
+Intercesión
+Subconjunto
 
 Podemos poner a pruba como funcionan cada uno de ellos.
 
