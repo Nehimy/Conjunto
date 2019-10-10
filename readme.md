@@ -14,7 +14,13 @@ Este mini proyecto fue creado por petición del **Ing. Campos** en Esctructura d
 
 Solo es una prueba de concepto para aplicar lo avanzado hasta ahora que es : Tipo de dato abstracto (10 oct. 219).
 
+# Imagenes ilustrativas de la interfaz
 
+![alt text](https://ibb.co/R0YQQZf)
+![alt text](https://ibb.co/KGZ4Qgq)
+![alt text](https://ibb.co/Bc3Tzmb)
+![alt text](https://ibb.co/sqnvxpt)
+![alt text](https://ibb.co/QNwh9Jq)
 
 # Como usar
 
