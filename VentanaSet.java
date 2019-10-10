@@ -1,3 +1,11 @@
+/*
+  Enlaces de referencia:
+  -https://tutorial.eyehunts.com/java/java-switch-statement-case-multiple-value-example/
+  -http://lineadecodigo.com/java/string-con-salto-de-linea-en-java/
+  -https://es.thefreedictionary.com/denota
+  -https://beginnersbook.com/2015/05/java-boolean-to-string/
+*/
+
 import ClassConjunto.Conjunto;
 
 import javax.swing.*;
@@ -19,7 +27,19 @@ public class VentanaSet{
   private Conjunto A = new Conjunto();
   private Conjunto B = new Conjunto();
   private Conjunto C = new Conjunto();
+  
   private Conjunto D = new Conjunto();
+  private Conjunto E = new Conjunto();
+  private Conjunto F = new Conjunto();
+  
+  private Conjunto G = new Conjunto();
+  private Conjunto H = new Conjunto();
+  private Conjunto I = new Conjunto();
+  
+  private Conjunto J = new Conjunto();
+  private Conjunto K = new Conjunto();
+  private Conjunto L = new Conjunto();
+  
   
   /* Ventana */
   private JFrame Ventana;
@@ -273,13 +293,34 @@ public class VentanaSet{
       }
     });
     
-    //onclick Insertar_en_B
-   /* Insertar_en_A.addActionListener(new ActionListener(){
+    //onclick Insertar_en_C
+    Insertar_en_C.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent e){
-        Insertar_en_B_Click();
+        Insertar_en_C_Click();
       }
     });
-    */
+    
+    //onclick Union
+    Union.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent e){
+        Union_Click();
+      }
+    });
+    
+    //onclick Intercession
+    Intercession.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent e){
+        Intercession_Click();
+      }
+    });
+    
+    //onclick SubConjunto
+    SubConjunto.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent e){
+        SubConjunto_Click();
+      }
+    });
+    
     /*------------------------*/
     //ventanaM.pack();
     Ventana.setVisible(true);//Configurando visualización de la ventana
@@ -300,8 +341,95 @@ public class VentanaSet{
     int Elemento = Integer.parseInt(Insertar_en_B_Txt.getText());
     B.Insertar(Elemento);
     Mostrar_B_Txt.setText(B.ObtenerTodo());
+    
   }
   
+    public void Insertar_en_C_Click(){
+    
+    int Elemento = Integer.parseInt(Insertar_en_C_Txt.getText());
+    C.Insertar(Elemento);
+    Mostrar_C_Txt.setText(C.ObtenerTodo());
+    
+  }
+  
+  public void Union_Click(){
+    
+    //Declaring a variable 
+    int number;
+    number = Integer.parseInt(JOptionPane.showInputDialog(Ventana," A U B press 1;\n A U C press 2;\n B U C press 3: "));
+    //Switch expression
+    switch (number){
+      //Case statements
+      case 1:
+        D.Union(A,B);
+        Resultado_Txt.setText(D.ObtenerTodo());
+        break;
+      case 2:
+        E.Union(A,C);
+        Resultado_Txt.setText(E.ObtenerTodo());
+        break;
+      case 3:
+        F.Union(B,C);
+        Resultado_Txt.setText(F.ObtenerTodo());
+        break;
+        //Default case statement
+      default:
+        System.out.println("Not in 1, 2 or 3");
+    }
+  }
+  
+  public void Intercession_Click(){
+  
+    //Declaring a variable 
+    int number;
+    number = Integer.parseInt(JOptionPane.showInputDialog(Ventana," A ∩ B press 1;\n A ∩ C press 2;\n B ∩ C press 3: "));
+    //Switch expression
+    switch (number){
+      //Case statements
+      case 1:
+        G.Intercession(A,B);
+        Resultado_Txt.setText(G.ObtenerTodo());
+        break;
+      case 2:
+        H.Intercession(A,C);
+        Resultado_Txt.setText(H.ObtenerTodo());
+        break;
+      case 3:
+        I.Intercession(B,C);
+        Resultado_Txt.setText(I.ObtenerTodo());
+        break;
+        //Default case statement
+      default:
+        System.out.println("Not in 1, 2 or 3");
+    }
+  }
+  
+  public void SubConjunto_Click(){
+  
+    //Declaring a variable 
+    int number;
+    number = Integer.parseInt(JOptionPane.showInputDialog(Ventana," B ⊂ A press 1;\n C ⊂ A press 2;\n B ⊂ C press 3: "));
+    //Switch expression
+    switch (number){
+      //Case statements
+      case 1:
+        //J.SubConjunto(A,B);
+        Resultado_Txt.setText(Boolean.toString(J.SubConjunto(B,A)));
+        break;
+      case 2:
+        //K.SubConjunto(A,C);
+        Resultado_Txt.setText(Boolean.toString(K.SubConjunto(C,A)));
+        
+        break;
+      case 3:
+        //L.SubConjunto(B,C);
+        Resultado_Txt.setText(Boolean.toString(L.SubConjunto(B,C)));
+        break;
+        //Default case statement
+      default:
+        System.out.println("Not in 1, 2 or 3");
+    }
+  }
   
 }
 

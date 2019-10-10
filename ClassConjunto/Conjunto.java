@@ -67,7 +67,6 @@ public class Conjunto{
     if(ConjuntoVacio()){
       dim++;
       Conjuntito [dim] = elemento;
-      System.out.println("Funciona 2.2");
     }else{
       if(!Pertenece(elemento)){//Si el elemento no pertenece lo añadimos
         Redimensionar();      
